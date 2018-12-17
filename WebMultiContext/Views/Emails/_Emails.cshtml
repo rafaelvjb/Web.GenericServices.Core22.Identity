@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WebMultiContext.DTOs.EmailDto>
+
+<div class="actions">
+    <a class="btn btn-default btn-sm" id="adicionar-novo-email">
+        Adicionar Novo Email
+    </a>
+
+</div>
+
+<div id="area-emails">
+    @if (Model != null)
+    {
+        foreach (var email in Model)
+        {
+
+            <partial name="_Email" model="email" />
+
+        }
+    }
+</div>

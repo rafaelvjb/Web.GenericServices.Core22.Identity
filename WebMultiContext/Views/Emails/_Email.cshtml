@@ -1,0 +1,27 @@
+﻿@using HtmlHelpers.BeginCollectionItemCore;
+@model WebMultiContext.DTOs.EmailDto
+
+
+<div class="form-horizontal well">
+    @using (Html.BeginCollectionItem(nameof(Model)))
+    {
+        <div class="form-group">
+            <input type="hidden" asp-for="EmailId" />
+            <input type="hidden" name="CondominioId" />
+            <label asp-for="Endereco" class="control-label"></label>
+            <input asp-for="Endereco" class="form-control" />
+            <span asp-validation-for="Endereco" class="text-danger"></span>
+        </div>
+
+
+        <div class="col-md-2">
+            <a class="btn red" onclick="removeTemp(this);">Excluir</a>
+        </div>
+
+        <script type="text/javascript">
+            function removeTemp(element) {
+                $(element).parent().parent().remove();
+            }
+        </script>
+    }
+</div>
